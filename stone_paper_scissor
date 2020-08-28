@@ -1,0 +1,63 @@
+import random
+x = 0
+y = 0
+i = 1
+z = 0
+while (i<=10):
+    list_1 = ["scissor", "stone", "paper"]
+    a = random.choice(list_1)
+    b = input ("enter you choice: \n")
+    try:
+        if a == b:
+            print("match drawn")
+            print(f"computer chose\t{a}")
+            z = z+1
+            print(f"{10-i} chances are left")
+
+        elif a == "scissor" and b == "stone":
+            print("you won")
+            print(f"computer chose\t{a}")
+            x = x+1
+            print(f"{10-i} chances are left")
+
+        elif a == "scissor" and b == "paper":
+            print("you loose")
+            print(f"computer chose\t{a}")
+            y = y+1
+            print(f"{10-i} chances are left")
+
+        elif a == "stone" and b == "paper":
+            print("you won")
+            print(f"computer chose\t{a}")
+            x = x+1
+            print(f"{10-i} chances are left")
+
+        elif a == "stone" and b == "scissor":
+            print("you loose")
+            print(f"computer chose\t{a}")
+            y = y+1
+            print(f"{10-i} chances are left")
+
+        elif a == "paper" and b == "scissor":
+            print("you won")
+            x = x+1
+            print(f"computer chose\t{a}")
+            print(f"{10-i} chances are left")
+
+        elif a == "paper" and b == "stone":
+            print("you loose")
+            print(f"computer chose\t{a}")
+            y = y+1
+            print(f"{10-i} chances are left")
+
+        else:
+            print("unexpected error")
+            print(f"{10-i} chances are left")
+
+    except:
+        print("error!!\t error!!")
+    i = i+1
+print(f"you won  {x} times")
+print(f"computer won  {y} times")
+print(f"match drawn {z} times")
+print(f"error found {10-(x+y+z)} times")
